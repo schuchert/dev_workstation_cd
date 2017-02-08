@@ -12,13 +12,14 @@ Vagrant.configure("2") do |config|
     v.customize ["modifyvm", :id, "--cpus", "4"]
     v.customize ["modifyvm", :id, "--vram", "64"]
     v.customize ["modifyvm", :id, "--nestedpaging", "on"]
-		v.customize ["modifyvm", :id, "--nictype1", "virtio"]
+    v.customize ["modifyvm", :id, "--nictype1", "virtio"]
   end
 
   config.vm.provision :chef_solo do |chef|
     chef.add_recipe "apt"
     chef.add_recipe "vim"
     chef.add_recipe "git"
+    chef.add_recipe "marian"
     chef.add_recipe "java"
     chef.add_recipe "maven" 
     chef.add_recipe "gradle" 
