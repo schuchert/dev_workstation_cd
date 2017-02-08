@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
     chef.add_recipe "apt"
     chef.add_recipe "vim"
     chef.add_recipe "git"
-    chef.add_recipe "marian"
+    chef.add_recipe "mariadb"
     chef.add_recipe "java"
     chef.add_recipe "maven" 
     chef.add_recipe "gradle" 
