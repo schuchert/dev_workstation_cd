@@ -1,13 +1,13 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "boxcutter/ubuntu1404-desktop"
+  config.vm.box = "boxcutter/ubuntu1604-desktop"
   config.vm.network "forwarded_port", guest: 8080, host: 8080
 
   config.vm.provider "virtualbox" do |v|
     v.customize ["modifyvm", :id, "--cpuexecutioncap", "100"]
     v.customize ["modifyvm", :id, "--paravirtprovider", "legacy"]
-    v.customize ["modifyvm", :id, "--memory", "3072"]
+    v.customize ["modifyvm", :id, "--memory", "6192"]
     v.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
     v.customize ["modifyvm", :id, "--cpus", "2"]
     v.customize ["modifyvm", :id, "--vram", "64"]
@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision :chef_solo do |chef|
-    chef.add_recipe "mariadb"
+	  chef.add_recipe "cf_cli"
     chef.add_recipe "apt"
     chef.add_recipe "vim"
     chef.add_recipe "git"
