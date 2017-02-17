@@ -16,6 +16,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision :chef_solo do |chef|
+	  chef.add_recipe "fix_locale"
 	  chef.add_recipe "cf_cli"
     chef.add_recipe "apt"
     chef.add_recipe "vim"
