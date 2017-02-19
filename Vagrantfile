@@ -26,6 +26,7 @@ Vagrant.configure("2") do |config|
     chef.add_recipe "maven" 
     chef.add_recipe "gradle" 
     chef.add_recipe "idea" 
+    chef.add_recipe "gnome_keybindings"
 
     chef.json = {
       "java" => { 
