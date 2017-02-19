@@ -9,11 +9,11 @@ Vagrant.configure("2") do |config|
     v.customize ["modifyvm", :id, "--paravirtprovider", "legacy"]
     v.customize ["modifyvm", :id, "--memory", "6192"]
     v.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
-    v.customize ["modifyvm", :id, "--cpus", "2"]
+    v.customize ["modifyvm", :id, "--cpus", "4"]
     v.customize ["modifyvm", :id, "--vram", "64"]
     v.customize ["modifyvm", :id, "--nestedpaging", "on"]
     v.customize ["modifyvm", :id, "--nictype1", "virtio"]
-    v.customize["modifyvm", :id, "--cableconnected1", "on"]
+    v.customize ["modifyvm", :id, "--cableconnected1", "on"]
   end
 
   config.vm.provision :chef_solo do |chef|
