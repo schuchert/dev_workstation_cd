@@ -13,6 +13,7 @@ Vagrant.configure("2") do |config|
     v.customize ["modifyvm", :id, "--vram", "64"]
     v.customize ["modifyvm", :id, "--nestedpaging", "on"]
     v.customize ["modifyvm", :id, "--nictype1", "virtio"]
+    vb.customize["modifyvm", :id, "--cableconnected1", "on"]
   end
 
   config.vm.provision :chef_solo do |chef|
