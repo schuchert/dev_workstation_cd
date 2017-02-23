@@ -3,6 +3,7 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "boxcutter/ubuntu1604-desktop"
   config.vm.network "forwarded_port", guest: 8080, host: 8080
+  config.omnibus.chef_version = "12.18.31"
 
   config.vm.provider "virtualbox" do |v|
     v.customize ["modifyvm", :id, "--cpuexecutioncap", "100"]
@@ -17,8 +18,8 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision :chef_solo do |chef|
-	  chef.add_recipe "fix_locale"
-	  chef.add_recipe "cf_cli"
+    chef.add_recipe "fix_locale"
+    chef.add_recipe "cf_cli"
     chef.add_recipe "apt"
     chef.add_recipe "vim"
     chef.add_recipe "git"
