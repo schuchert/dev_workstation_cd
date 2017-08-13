@@ -1,4 +1,4 @@
-idea_version = '2016.3.4'
+idea_version = '2017.2.1'
 
 cache = Chef::Config[:file_cache_path]
 extract = "#{cache}/idea-#{idea_version}"
